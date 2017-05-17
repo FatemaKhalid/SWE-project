@@ -1,0 +1,125 @@
+*{
+	marging:0;
+	padding: 0;
+	
+}
+.container {
+	padding: 0;
+}
+
+		.im{
+			height: 32px;
+			width: 32px;
+		}
+		.nav{
+			background-color:#ffffff;
+		}
+		.nav ul{
+			list-style-type: none;
+			color #ccc;
+			
+			font-size: 22px;
+			display: inline-block;
+		}
+		.rightnav{
+			float: right;
+			margin-right: 5em;
+		}
+		.leftnav{
+
+			margin-left: 5em;
+		}
+		.lefticon{
+
+			float: left;
+			margin-right: 20px;
+
+		}
+		.righticon{
+
+			float: right;
+			margin:0px 10px;
+		}
+
+		.logo{
+			height: auto;
+			width: 10%;
+			position: relative;
+			left: 29%;
+			bottom: 1.2em;
+			
+		}
+		
+		.nav{
+			height: 4em;
+		}
+		.one{
+
+			width: 40%;
+			height: 500px;
+			background-image: url(img/edu3.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			float: right;
+		}
+
+		.dropbtn:hover {
+			pointer-events: 
+
+		}
+
+		.two{
+
+width: 40%;
+			height: 220px;
+			background-image: url(img/edu2.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			float: right;
+			
+
+		}
+
+		.three{
+
+			width: 15%;
+			height: 220px;
+			background-image: url(img/edu1.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			float: right;
+			
+		}
+		.nav{
+			box-shadow: 3px 3px 3px #ccc;
+			display: block;
+		}
+		.mostread{
+			height: 90%;
+			width: 90%;
+			margin: auto;
+		}
+		
+		.dropdown-content{
+			visibility: hidden;
+			display: block;
+			text-align: center;
+			
+			
+		}
+		.dropdown-content a{
+		font-size: 1.5em;
+		font-family: sans-serif;
+		text-decoration: none;
+		color:#212121;
+		padding: 0 1em;
+
+		}
+		.dropdown-content a:hover{
+			color:#c42c45;
+		}
+
+		.dropbtn{
+			float: right;
+		}

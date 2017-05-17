@@ -1,0 +1,68 @@
+
+.heba{
+
+   position:absolute;top:10%;
+   margin-left: 5%;
+list-style: none;
+
+
+}
+
+.heba li
+{
+  display:inline-block;
+  float:left;
+  margin:20px;
+}
+.heba1{
+
+   position:absolute;top:10%;
+   margin-left: 75%;
+list-style: none;
+}
+
+.myButton {
+  -moz-box-shadow: 3px 4px 0px -2px #85c3b6;
+  -webkit-box-shadow: 3px 4px 0px -2px #85c3b6;
+  
+  
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+ 
+  -moz-border-radius:12px;
+  -webkit-border-radius:12px;
+  border-radius:12px;
+  
+  display:inline-block;
+  cursor:pointer;
+  color:#FFFFFF;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  padding:7px 51px;
+  text-decoration:none;
+   text-align: center;
+  text-shadow:0px 1px 0px #3d768a;
+  background-color:rgba(0,0,0,0);
+  margin-bottom: 20px;
+}
+.myButton:hover {
+  
+  background-color:#85c3b6;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+.ii
+{
+  overflow: hidden;
+  transform:scale(1.0);
+  margin-left: 140pt;
+  
+}
+
+#body{
+  overflow-y: hidden;
+
+}

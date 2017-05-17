@@ -1,0 +1,64 @@
+.center{
+
+	background-color: white;
+	
+	margin: 0 auto;
+
+}
+.article{
+font-size: 25px;
+line-height: 30px;
+padding: 10px 30px 20px 25px;
+
+}
+
+.adj_image img{
+
+	float:right;
+	width: auto;
+	height: 500px;
+
+
+}
+
+.clear{
+	clear:both;
+}
+.title{
+clear: both;
+margin: 20px;
+font-size: 40px;
+float: right;
+color: blue;
+min-width: 500px;
+min-height: 30px;
+}
+
+@media screen and (min-width: 1000px)
+{
+	.center{max-width: 70%;}
+
+
+
+
+}
+@media screen and (min-width: 100px) and (max-width: 900px)
+{
+	.adj_image img{
+		width: 400px;
+		height: auto;
+	}
+	.center{
+		min-width: 500px;
+	}
+
+	body{
+		min-width: 500px;
+	}
+}
+.float_the_like{
+	//float:right;
+	position: absolute;
+	left:screen-width;
+	//right: px;
+}

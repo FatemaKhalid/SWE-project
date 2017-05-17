@@ -1,0 +1,103 @@
+@charset "utf-8";
+/*
+Template Name: VisualArt
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Layout CSS
+*/
+
+@import url("fontawesome-4.3.0.min.css");
+@import url("framework.css");
+
+
+
+/* Full Width Split Box
+--------------------------------------------------------------------------------------------------------------- */
+.split{display:block; background-image: url("../assets/images/art1.jpg"); width:100%; background-position:top right; background-repeat:no-repeat; background-size:cover;}
+.split.rightaligned{background-position:top left; }
+
+.split .box{display:block; float:left; width:50%; padding:8%;}
+.split.rightaligned .box{float:right;}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+
+
+/* Colours
+--------------------------------------------------------------------------------------------------------------- */
+/*body{color:#888888; background-color:#2C2C2C;}*/
+a{color:#7CCDDE;}
+hr, .borderedbox{border-color:#D7D7D7;}
+label span{color:#FF0000; background-color:inherit;}
+.overlay{color:inherit; background-color:rgba(0,0,0,.35); background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhJREFUeNpiYGBgePz//38GRhABAgABBgBFTAbfCBNE2AAAAABJRU5ErkJggg==");}
+.btn{color:#FFFFFF; background-color:#7CCDDE;}
+
+/* Full Width Split Box */
+.split{color:#FFFFFF; background-color:rgba(44,44,44,1); /* #2C2C2C */} /* Changes in mediaqueries */
+.split.light{color:#888888; background-color:#85C3B6} /* Changes in mediaqueries */
+.split .box{background-color:inherit;}
+/* ------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------ */
+
+
+/* Media Queries
+--------------------------------------------------------------------------------------------------------------- */
+@-ms-viewport{width:device-width;}
+
+
+/* Max Wrapper Width - Laptop, Desktop etc.
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width:978px){
+	#topbar, #header, #pageintro, #breadcrumb, .container, #footer, #copyright{max-width:978px;}
+}
+
+
+/* Smartphone + Tablet
+--------------------------------------------------------------------------------------------------------------- */
+
+
+/*@media screen and (max-width:750px){
+	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
+	.fl_left, .fl_right{display:block; float:none;}
+	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
+
+	#header, #topbar{text-align:center;}
+
+	#header #logo{margin:15px 0;}
+
+	#topbar{padding:10px 0 0 0;}
+	#topbar li{float:none; border:none; min-height:0; line-height:normal;}
+	#topbar .fl_left{margin-bottom:10px;}
+	#topbar .fl_left li{padding:0; min-height:0;}
+	#topbar .fl_left li:first-child{margin-bottom:5px;}
+
+	.container{padding-bottom:50px;}
+
+	#latest figure{width:50%;}
+	#latest figure:nth-child(2n+1){clear:left;}
+
+	#footer{padding-bottom:30px;}
+}
+*/
+@media screen and (max-width:450px){
+	#latest figure{float:none; width:100%;}
+}
+
+
+/* Other
+--------------------------------------------------------------------------------------------------------------- */
+/*@media screen and (max-width:650px){
+	.scrollable{display:block; width:100%; margin:0 0 30px 0; padding:0 0 15px 0; overflow:auto; overflow-x:scroll;}
+	.scrollable table{margin:0; padding:0; white-space:nowrap;}
+
+	.inline li{display:block; margin-bottom:10px;}
+	.pushright li{margin-right:0;}
+
+	.font-x2{font-size:1.4rem;}
+	.font-x3{font-size:1.6rem;}
+}*/

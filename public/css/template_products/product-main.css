@@ -1,0 +1,49 @@
+/***************Feryal*************/
+.gallery-item img {
+
+width: 270px;
+height: 220px;
+position: relative;
+z-index: 0;  
+    
+}
+
+.contacts-container{
+    display: inline-block;
+    margin-top: 40px;
+    margin-right: 40px;
+    width: 20%;
+    
+}
+/*
+.gallery-add ul{
+    width: 100%;
+    margin: inherit;
+}
+*/
+.span12{
+    margin-left: 0px;
+}
+
+.panel > .panel-heading{
+ background-color:  #85c3b6;
+
+}
+.products-panel{
+    width: 85%;
+    margin: auto;
+}
+.panel-title{
+    font-size: 2.5em;
+    text-overflow: ellipsis;
+}
+.panel-body-add{
+    text-align: center;
+}
+.product-name span{
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/*****************************/

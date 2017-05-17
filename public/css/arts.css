@@ -1,0 +1,40 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/*.one {
+
+	height: 100%;
+}*/
+.row{
+
+	height: 100%;
+}
+.two{
+	height: 50%;
+
+}
+.second{
+	width:100%;
+}
+.img_one{
+	width: 100%;
+	height:100%;
+}
+/*.second .thumbnail{
+	width: 100%;
+	height: 50%;
+}*/
+
+.sec_img{
+	width: 100%;
+	
+}
+/*.second .thumbnail img{
+	height: inherit;
+}*/
+
+.sub{
+	width: 50%;
+	float: left;
+}

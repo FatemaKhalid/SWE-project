@@ -1,0 +1,115 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	overflow: hidden;
+	background-color:#fbf9fe;
+}
+.act{
+
+	font-size: 8em;
+	font-family: "Patua One";
+
+	background-color:#85c3b6 ;
+	color: #85c3b6;
+padding: 0px 7px;
+
+}
+
+.logo {
+	/*width: 700px;*/
+	z-index: 5;
+	position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+/*
+  -webkit-animation: hide 0.5s 1s ease-in-out backwards,
+  away 1s 2s ease-in-out forwards;*/
+  -webkit-animation:away 1s ease-in-out backwards,
+  hide .5 1s ease-in-out forwards;
+}
+
+.circ{
+
+	width: 200px;
+	height: 200px;
+  opacity: 0;
+border-radius: 50%;
+position: absolute;
+top: 35%;
+left: 42%;
+transform: translate(-50%, -50%);
+	
+
+}
+.one{
+
+	background-color: #85c3b6;
+
+  -webkit-animation:grow 2s 1s reverse forwards;
+
+}
+
+.box1{display:inline-block; float:left; height:inherit; width: 50%;}
+.box2{display:inline-block; float:left; width:50%; padding:5%; padding-right: 10%;}
+.nospace {  padding-bottom: 10%; direction: rtl; font-family: "KacstOne",sans-serif; font-size: 1.25em; }
+
+@-webkit-keyframes grow {
+ 0% {
+-webkit-transform: scale( 20 );-moz-transform: scale( 20 );-o-transform: scale( 20 );-ms-transform: scale( 20 );transform: scale( 20 );
+  opacity: 1;
+  }
+  100% {
+  -webkit-transform: scale( 0 );-moz-transform: scale( 0 );-o-transform: scale( 0);-ms-transform: scale(0);transform: scale( 0 );
+
+  opacity: 0;
+  }
+
+
+}
+
+@-webkit-keyframes hide {
+ 0% {
+ opacity: 0;
+  }
+  40% {
+  opacity: 1;
+  }
+
+  100% {
+  opacity: 1;
+  }
+
+}
+
+@-webkit-keyframes away {
+ 0% {
+ opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  }
+
+}
+
+@-webkit-keyframes fade {
+ 0% {
+  -webkit-transform: scale( 4 );-moz-transform: scale(4 );-o-transform: scale( 4 );-ms-transform: scale( 4 );transform: scale( 4 );
+  opacity: 1;
+  background-color: #fff;
+  }
+  100% {
+    -webkit-transform: scale( 0 );-moz-transform: scale(0 );-o-transform: scale( 0 );-ms-transform: scale( 0 );transform: scale( 0 );
+  opacity: 1;
+  background-color: #fff;
+}
+
+}
+
+@media screen and (max-width:900px){
+
+  .box{float:none; width:100%;}
+  
+}
