@@ -64,7 +64,7 @@ display: inline;
 
 			position: absolute;
 			left: 43%;
-			bottom: -18%;
+			bottom: -28%;
 		}
 		#lo{
 			height: 110px;
@@ -78,10 +78,4 @@ display: inline;
 			height: 100%;
 
 			box-shadow: -5px 5px rgba(115, 200, 182,.2);
-		}
-
-		#cont{
-
-			width: 0;
-			visibility: hidden;
 		}

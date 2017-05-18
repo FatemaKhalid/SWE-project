@@ -29,8 +29,7 @@ body{
 
 #latest ul{
 }
-#latest ul li{display:block; float:left; width:24%; height:26%; margin: .05%.20%; }
-#latest ul li:first-child{clear:left; width:47%; }
+
  /*#latest ul li:last-child{clear:left; }*/
 #latest ul li img{display:block; width:100%;}
 #latest ul li .txtoverlay{display:block; text-align:center; margin: auto;}
@@ -79,7 +78,19 @@ body{
 #backtotop i{display:block; width:100%; height:100%; line-height:inherit;}
 #backtotop.visible{visibility:visible; opacity:.5;}
 #backtotop:hover{opacity:1;}
+.container .content{}
 
+.sectiontitle{margin-bottom:80px; text-align:center;}
+.sectiontitle *{margin:0;}
+.one_third{margin:0; margin-right: 2%; width: 20%;}
+.services{}
+.services li{padding:50px 0 0 0; text-align:center;}
+/*.services li:last-child{margin-bottom:0;} Used when elements stack in small viewports */
+.services li *{}
+.services li article{display:block; position:relative; padding:65px 20px 25px 20px;	background-image: url('../assets/images/art1.jpg'); background-size: cover; background-repeat: no-repeat;}
+.services li article i{display:inline-block; position:absolute; top:0; left:50%; width:80px; height:80px; line-height:70px; margin:-40px 0 0 -40px; border:5px solid; border-radius:50%; font-size:36px; z-index:1;}
+.services li article .heading{font-size:1.2rem;}
+.services li article footer{margin-top:25px;}
 
 
 
@@ -96,11 +107,15 @@ body{
 .overlay{color:#FFFFFF; background-color:inherit;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.55);}
 
-.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#A1C6D9; border-color:#A1C6D9;}
-.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#1b7396; border-color:#A1C6D9;}
+.btn:hover, .btn.inverse{color:inherit; color:#000; background-color:#fff; border-color:inherit;}
 
 .txtoverlay .txtcaption{color:#FFFFFF; background-color:rgba(115, 200, 182,.4);}
 
+/* Content Area */
+.services li article{color:#F6F6F6; background-color:#F6F6F6; font-weight: bolder;}
+.services li article i{color:#FFFFFF; background:#E43F21; border-color:#FFFFFF;}
+.services li article:hover i{color:#E43F21; background:#F6F6F6;}
 
 
 #backtotop{color:#FFFFFF; background-color:#A1C6D9;}
@@ -187,4 +202,30 @@ body{
 
 	.hoc.split{max-width:none; width:100%;}
 	.split .box{float:none; width:100%; padding:10% 5%;}
+}
+
+.lihebata3del {
+    display: block;
+    float: left;
+    width: 32%;
+    margin: .05%.20%;
+        margin-top: .5%;
+}
+.lihebata3del2 {
+    display: block;
+    float: left;
+    width: 23.9%;
+    margin: .05%.20%;
+        margin-top: .4%;
+}
+  .hebata3del{
+    height:270px;
+    
+  } 
+  .hebata3del1{
+    height:260px;
+    
+  } 
+.add-fortxt{
+    text-align: center;
 }

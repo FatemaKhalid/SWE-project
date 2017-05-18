@@ -68,8 +68,8 @@ a:link:active, a:visited:active {
 			box-shadow: -5px 5px rgba(115, 200, 182,.2);
 		}
 
-		#cont{
-
-			width: 0;
-			visibility: hidden;
-		}
+		input[type="text"], input[type="number"], input[type="email"] {
+    height: 30px;
+    /* padding: 4px 6px; */
+    margin-bottom: 0px;
+}
