@@ -23,7 +23,7 @@ class OrderController extends Controller
            $result=Customer::where('phone',$request->get('tel'))->get();
           if ($result->isEmpty()) { 
           $customer=new Customer;
-          $customer->name=$request->get('name');
+          $customer->c_name=$request->get('name');
           $customer->phone=$request->get('tel');
           $customer->address=$request->get('address');
           $customer->email=$request->get('email');
@@ -45,4 +45,36 @@ class OrderController extends Controller
         
 
   }
+
+   public function view()
+    {
+    
+            $undelivered_orders=Order::join('customers', 'orders.customer_id', '=', 'customers.id')
+            ->join('products', 'orders.product_id', '=', 'products.id')
+            ->select('orders.*', 'products.name','products.price','customers.c_name', 'customers.phone','customers.email','customers.address')
+             ->where('orders.delivered',0)
+            ->get();
+            $delivered_orders=Order::join('customers', 'orders.customer_id', '=', 'customers.id')
+            ->join('products', 'orders.product_id', '=', 'products.id')->select('orders.*', 'products.name','products.price','customers.c_name', 'customers.phone','customers.email','customers.address')
+             ->where('orders.delivered',1)
+            ->get();
+
+            //return $delivered_orders;
+        
+      return view('admin.viewOrders',compact('undelivered_orders','delivered_orders'));
+       // return response()->json( $undelivered_orders);
+      
+    }
+
+     public function review($order_id)
+    {
+    
+        Order::where('id', $order_id)->update(['delivered' => 1]);
+        
+       
+        return back();
+      
+    }
+
+
 }

@@ -21,25 +21,16 @@ Route::get('/yarab', function () {
     return view('yarab');
 })->name('yarab');
 
-Route::get('/Adminarticles', function () {
-    return view('Adminarticles');
-})->name('Adminarticles');
-
-// Route::get('/Admincontacts', function () {
-//     return view('Admincontacts');
-// })->name('Admincontacts');
-Route::get('/Admincontacts','AdminController@contacts')->name('contacts');
-Route::post('/Admincontacts','AdminController@Addcont');//->name('contact');
-
 
 Route::get('/articles/{count_id}/{type}',[
     'as' => 'articles',
     'uses' =>'ArticleController@articles'
 ]);
 
+
 Route::get('/africa/{loc_id}',[
     'as' => 'africa',
-    'uses' =>'homeController@africa'
+    'uses' =>'CountryController@africa'
 ]);
 
 
@@ -64,6 +55,12 @@ Route::post('saveimage','homeController@Save')->name('save.image');
 
 Route::post('insertarticle','ArticleController@Upload')->name('save.article');
 
+
+Route::post('insertadvice','AdviceController@Upload')->name('save.advice');
+
+
+
+
 Route::post('submitorder','OrderController@Submit')->name('submitorder');
 
 Route::get('/image', function () {
@@ -74,18 +71,12 @@ Route::get('/image', function () {
 
 
 
-// awl 7route ele bygeb l countries
-Route::get('/Admincountry','ArticleController@countriesTodelete')->name('countriesTodelete');
-Route::get('/Adminhome', function () {
-    return view('Adminhome');
-})->name('Adminhome');
-
-
-Route::post('/Adminarticles','ArticleController@showTodelete')->name('showTodelete');
 
 
 
 Route::get('/insertArticle',"ArticleController@insert_article")->name('insertArticle');
+
+Route::get('/insertAdvice',"AdviceController@insert_article")->name('insertAdvice');
 
 Route::get('/singlearticle/{article_id}/{count_id}',"ArticleController@get_single_article")->name('singlearticle');
 
@@ -112,6 +103,77 @@ Route::post('/searchArticles',"ArticleController@search_articles")->name('search
 Route::post('/searchAdvices',"AdviceController@search_advices")->name('searchAdvices');
 
 
+Route::get('/tgrba',function(){
+    return view('tgrba');
+})->name('welcome');
+
+Route::post('/submit', function(Illuminate\Http\Request $request){
+    $content = $request['content'];
+    return view('output',['content'=>$content]);
+})->name('submit');
+Route::get('/addProduct','ProductController@add')->name('addProduct');
+
+
+
+Route::post('/saveProduct','ProductController@Save')->name('saveProduct');
+Auth::routes();
+
+Route::get('/home', 'homeController@index');
+
+
+Route::get('/changepass', 'AdminController@showResetForm')->name('change.pass.form');
+
+Route::post('/changepass', 'AdminController@reset')->name('pass.change');
+
+Route::get('/changeUserName', 'AdminController@showUserNameForm')->name('changeUserName');
+
+Route::post('/changeUserName', 'AdminController@changeUserName')->name('changeUserName');
+
+
+Route::get('/viewOrders','OrderController@view')->name('viewOrders');
+
+
+Route::get('/check_back',"AdminController@check_back")->name('check_back');
+
+
+
+Route::get('/reviewOrder/{order_id}','OrderController@review')->name('reviewOrder');
+Route::get('/showProducts','ProductController@get_products_for_admin')->name('showProducts');
+Route::get('/showProductSingle/{product_id}',[
+    'as' => 'showProductSingle',
+    'uses' =>'ProductController@get_single_product_for_admin'
+]);
+
+Route::post('/updateProduct',[
+    'as' => 'updateProduct',
+    'uses' =>'ProductController@update_product'
+]);
+Route::post('/changeProductPic','ProductController@change_pic')->name('changeProductPic');
+Route::post('/delProduct','ProductController@del_product')->name('delProduct');
+
+
+Route::get('/admin_menu', function () {
+
+
+   return view('AdminMenu');
+});
+
+
+//fatema############################Articles of admin########################
+Route::get('/Admincountry','ArticleController@countriesTodelete')->name('countriesTodelete');
+
+Route::post('/Admincountry','ArticleController@showTodelete')->name('showTodelete');
+
+Route::post('/delArts',"ArticleController@delArts")->name('delArts');
+
+Route::post('/searchArdticlesAdmin','ArticleController@search_articles_admin')->name('searchArdticlesAdmin');
+
+//fatema############################Contacts of admin########################
 Route::post('/add_contact',"AdminController@Addcont")->name('add_contact');
 Route::post('/delete_contact',"AdminController@Delcont")->name('delete_contact');
-Route::post('/delArts',"ArticleController@delArts")->name('delArts');
+Route::get('/Admincontacts','AdminController@contacts')->name('contacts');
+//fatema############################Advics of admin########################
+Route::get('/Adminadvices','AdviceController@get_advices_admin')->name('Adminadvices');
+Route::post('/AdminadvicesSearch','AdviceController@search_advices_admin')->name('AdminadvicesSearch');
+Route::get('/AdminAdvices','AdviceController@advicesToDelete')->name('advicesToDelete');
+Route::post('/AdminAdvices',"AdviceController@delAdvs")->name('delAdvs');
