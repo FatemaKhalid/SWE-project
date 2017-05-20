@@ -33,24 +33,37 @@
 
 </head>
 
+
 <body>
 
 <!-- ########################################################## -->
 
 
 			
+				<div class="w3_agileits_nav">	
+					<!-- <nav class="wthree_nav_menu">
+						<ul>
+							<li><a href="#" class="icon icon-menu icon-menu-active" id="btn-menu">Menu</a></li>
+						</ul>
+					</nav> -->
 					<div id="sideNav" class="showFullMenu">
 						<ul>
-							<li><a href="#services" class="scroll w3_dlt_art"><span>Delete -Articles</span></a></li>
-							<li><a href="#events" class="scroll w3_edit_art"><span>Edit-Articles</span></a></li>
-							<li><a href="#Up-art" class="scroll w3_Up_art"><span>Upload-Articles</span></a></li>
-							<li><a href="#srch-art" class="scroll w3_srch_art"><span>Search-Articles</span></a></li>
-							<li><a href="#mail" class="sc6roll w3_out"><span>Log-Out</span></a></li>
+							<li><a href="{{ URL::route('viewOrders')}}" class="scroll w3_dlt_art"><span>View-Orders</span></a></li>
+							<li><a href="{{ URL::route('insertArticle')}}" class="scroll w3_dlt_art"><span>Upload-Articles</span></a></li>
+							<li><a href="{{ URL::route('insertAdvice')}}" class="scroll w3_dlt_art"><span>Upload-Advices</span></a></li>
+							<li><a href="{{ URL::route('countriesTodelete')}}" class="scroll w3_dlt_art"><span>Delete-Articles</span></a></li>
+							<li><a href="#services" class="scroll w3_dlt_art"><span>Delete-Advices</span></a></li>
+							<li><a href="{{ URL::route('addProduct')}}" class="scroll w3_dlt_art"><span>Add-Products</span></a></li>
+							<li><a href="{{ URL::route('showProducts')}}" class="scroll w3_dlt_art"><span>Delete/Update-  Products</span></a></li>
+							<li><a href="{{ URL::route('contacts')}}" class="sc6roll w3_out"><span>Add/Delete Contact</span></a></li>
+							<li><a href="{{ URL::route('changeUserName')}}" class="sc6roll w3_out"><span>Change-User name</span></a></li>
+							<li><a href="{{ URL::route('change.pass.form')}}" class="sc6roll w3_out"><span>Change-Password</span></a></li>
 						</ul>
 					</div>
 				
 			
 			
+		</div>
    
 <!-- ############################################################# -->
 </body>

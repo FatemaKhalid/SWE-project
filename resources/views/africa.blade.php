@@ -7,6 +7,7 @@
 
 <!-- nav bar -->
   <link rel="stylesheet" type="text/css" href="{!! asset('css/africa.css') !!}">
+<link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
 
 
 
@@ -58,12 +59,12 @@ window.onload = function(){
  //  a.text=getQueryVariable("id");
    a.text= countries[i].name;
    a.id =countries[i].id;
-  
+
    a.onclick=function(event) {
       
         
        
-        window.open("{{url('/articles')}}" + "/" + event.target.id ,"_parent");
+        window.open("{{url('/articles')}}" + "/" + event.target.id +"/ترفيهيه","_parent");
           //window.location.href="page2.php?name="+a.id;
             }
 
@@ -106,7 +107,15 @@ window.onload = function(){
 
 <div id="body">
 
- 
+  
+
+
+
+
+
+<!-- <img class="ii" src="africa.svg" /> -->
+
+
 <ul class="heba" id="list">
 
 

@@ -5,6 +5,10 @@
 <!--<title>Piccolo Theme</title>-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+    
+<link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
+
 <!-- CSS
 ================================================== -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -18,7 +22,7 @@
 <link rel="stylesheet" href="{!! asset('css/template_products/product-main.css') !!}">     
 <link rel="stylesheet" href="{!! asset('css/template_products/product-additional.css') !!}">        
     
-<link rel="stylesheet" href="{!! asset('css/navproduct.css') !!}">        
+     
     
 
 <!--[if lt IE 9]>
@@ -28,7 +32,7 @@
 
 <!-- Favicons
 ================================================== -->
-<link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
+<link rel="shortcut icon" href="img/favicon.ico">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
@@ -49,93 +53,37 @@
 
 </head>
     
-   
  
 <body class="home ">
 
+@extends('layouts.app')
+
+@section('content')
+    
+
+
+   
+    
     
     <div class="container">
      <div class="row header"><!-- Begin Header -->
       
      <!-------------Nav Bar----------------- -->
 
-<nav class="navbar navbar-static-top" style="background-color: #fff; height: 20%">
-  <div class="container2">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <!-- 
-    <div class="navbar-collapse collapse navbar-responsive-collapse"></div> -->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ Route('index')}}"><img src="{!! asset('/assets/images/home.png')!!}" class="im"> <span class="sr-only">(current)</span></a></li>
-        <!-- <li><a href="#"><img class="im" src="{!! asset('/assets/images/search.png')!!}" class="srch" ></a></li> -->
-        
-      </ul>
+<div class="flash-message">
+    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+      @if(Session::has('alert-' . $msg))
 
-    
-
-      <form class="navbar-form navbar-left" method="POST" action="{{ Route('search')}}">
-                 {{ csrf_field() }}
-        <div class="form-group" id="cont">
-          <input type="text" class="form-control" placeholder="Search" name="search">
-        </div>
-        <button type="submit" class="btn btn-default"><img src="{!! asset('/assets/images/search.png')!!}" class="srch" ></button>
-      </form>
-
-        <img src="{!! asset('/assets/images/logo.png')!!}" alt="Brand" class="navbar-brand im logo" id="lo">
-
-
-   
-    </div><!-- /.navbar-collapse -->
-
-  </div><!-- /.container -->
-  
-</nav>
-
+      <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+      @endif
+    @endforeach
+  </div> <!-- end .flash-message -->
 
   <!-- ------------------------------ -->
         </div>
-          @if(!(isset($message))) 
-<div class="contacts-container col-xs-6">
-        <div class="panel panel-default " id= "contacts-panel">
-            <div class="panel-heading">
-                <h3 class="panel-title text-center">اتصل بنا </h3>
-            </div>
-         </div>
-    </div>
-        
-    <script>
-        
-        window.onload = function(){
-            
-            var contacts = {!! json_encode($contacts->toArray()) !!};
 
-         
-                for(var i=0;i<contacts.length;i++)
-      {
-          var panelBody = document.getElementById("contacts-panel");
-          var divPanelBody = document.createElement("div")
-          divPanelBody.className = "panel-body";
-          var spanOfContacts = document.createElement("span");
-          spanOfContacts.className = "glyphicon glyphicon-earphone";
-          spanOfContacts.textContent = " " + contacts[i].phone;
-          divPanelBody.appendChild(spanOfContacts);
-          panelBody.appendChild(divPanelBody);
-          
-      }
-            
-        }
-        </script>
-        @endif
+        
     <div class="row gallery-row col-xs-6"><!-- Begin Gallery Row --> 
       
     	<div class="span12">
@@ -143,7 +91,7 @@
         <!-- Gallery Thumbnails
         ================================================== -->
 
-<!--<div class="row clearfix no-margin">-->
+<div class="row clearfix no-margin">
      <div class="panel panel-default products-panel" id= "Products-panel">
     
    
@@ -151,45 +99,13 @@
                 <h3 class="panel-title text-center" >منتجاتنا</h3>
             </div>
         <div class="panel-body panel-body-add" id= "body-products" >
-             @if(isset($message))
-            
-            <p> {{$message}}   </p>
-            @else
          <ul class="gallery-post-grid holder gallery-add" id= "gallery">
-             
-                 
-                @foreach($product_s as $key => $product)
-           
-   <li  class="span3 gallery-item " data-id="id-1" data-type="illustration" >
-                                                
-                           
-                                
-                          <img  src="../storage/{{$product->pic}}" alt="Gallery" onclick="aOfimgOnclick({{$product->id}})">
-                        
-                        <span class="project-details">{{$product->name}}</span>
-                        <span class="project-details">{{$product->price}}</span>
-
-                    </li>
-          
-            
-            @endforeach
-              
-            
             </ul>
-           
-            <script>
-            function aOfimgOnclick(p_id){
-
-               this.id = p_id;
-        window.open("{{url('/ProductSingle')}}" + "/" + this.id ,"_parent");
-                }
-            
-            </script>
-                 @endif
 
             </div>
          </div>
 
+@include('../admin/jsShowProducts')
             
                     
        <!-- <div class="panel-body" >
@@ -197,7 +113,7 @@
  <span class="glyphicon glyphicon-earphone"> 01120819478</span>  </div>
 </div>-->
  
-<!--    </div>-->
+    </div>
                 
                 </div>
             </div>
@@ -240,6 +156,6 @@
     <!-- Scroll to Top -->  
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
         
-    
+    @endsection
 </body>
 </html>

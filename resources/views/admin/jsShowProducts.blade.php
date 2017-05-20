@@ -51,18 +51,20 @@ var soldouturl = "assets/images/template_products/gallery/sold-out-img.png";
            if(products[i].soldout == 1)
               {
                  divimg.setAttribute("style","background:url("+soldouturl+") no-repeat top left ,url("+url+") no-repeat center center; background-size: cover;");
+                // divimg.setAttribute("style"," background-size: cover;");
 
                   
               }
           else {
               divimg.setAttribute("style","background:url("+url+") no-repeat center center; background-size: cover;");
+              //   divimg.setAttribute("style"," background-size: cover;");
           }
           
 
           aOfimage.addEventListener('click',function(event) {
       
        
-        window.open("{{url('/ProductSingle')}}" + "/" + this.id ,"_parent");
+        window.open("{{url('/showProductSingle')}}" + "/" + this.id ,"_parent");
               
                  
             });
@@ -91,21 +93,6 @@ var soldouturl = "assets/images/template_products/gallery/sold-out-img.png";
             
         }
     
-    var contacts = {!! json_encode($contacts->toArray()) !!};
-
-         
-                for(var i=0;i<contacts.length;i++)
-      {
-          var panelBody = document.getElementById("contacts-panel");
-          var divPanelBody = document.createElement("div")
-          divPanelBody.className = "panel-body";
-          var spanOfContacts = document.createElement("span");
-          spanOfContacts.className = "glyphicon glyphicon-earphone";
-          spanOfContacts.textContent = " " + contacts[i].phone;
-          divPanelBody.appendChild(spanOfContacts);
-          panelBody.appendChild(divPanelBody);
-          
-      }
     }
     
     

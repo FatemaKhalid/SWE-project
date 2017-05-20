@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link href="{!! asset('css/layout.css') !!}" rel="stylesheet" type="text/css" media="all">
+     <!--   <link href="{!! asset('css/layout.css') !!}" rel="stylesheet" type="text/css" media="all"> -->
        <!-- //custom-theme -->
 <!-- <link href="{!! asset('css/adminhome/style.less') !!}" rel="stylesheet" type="text/css" media="all" /> -->
 <link href="{!! asset('css/adminhome/style.css') !!}" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('js/adminhome/bars.js') !!}"></script>
-<script type="text/javascript" src="{!! asset('js/adminhome/gnmenu.js') !!}"></script>
+<!-- <script type="text/javascript" src="{!! asset('js/jquery-2.1.4.min.js') !!}"></script> -->
+<!-- <script type="text/javascript" src="{!! asset('js/adminhome/bars.js') !!}"></script>
+<script type="text/javascript" src="{!! asset('js/adminhome/gnmenu.js') !!}"></script> -->
 <!-- //js -->
 <link rel="stylesheet" href="{!! asset('css/adminhome/flexslider.css') !!}" type="text/css" media="screen" property="" />
 <!-- gallery -->
@@ -21,8 +21,12 @@
 <link href="{!! asset('css/adminhome/font-awesome.css') !!}" rel="stylesheet"> 
 
 </head>
-<body>
 
+<body>
+@extends('layouts.app')
+
+@section('content')
+    
 		<div class="container">
 		<ul class="" id="conts">
 
@@ -68,6 +72,6 @@
   </div> <!-- end .flash-message -->
 
 
-    
+    @endsection
 </body>
 </html>

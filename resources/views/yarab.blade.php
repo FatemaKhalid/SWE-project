@@ -1,6 +1,7 @@
 <html>
 <head>
 
+<link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
 
 
 	<title></title>

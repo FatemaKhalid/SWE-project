@@ -43,9 +43,9 @@
 </p>
 
 <div class="clear"></div>
-<p dir="rtl" class="article" id="body_text">
+<div dir="rtl" class="article" id="body_text">
 .
-<p>
+</div>
 </div>
 
 @include('jsadvicesingle')

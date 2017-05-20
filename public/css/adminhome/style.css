@@ -7,12 +7,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     font-size: 100%;
 	font-family: 'Open Sans', sans-serif;
-	/*background:#ffffff;*/
+
 	margin: 0;
+  
 }
 p,ul li,ol li{
 	margin:0;
 	font-size:14px;
+  list-style: none;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Gentium Basic', serif;
@@ -33,7 +35,7 @@ input[type="submit"],input[type="reset"],a{
     transition:0.5s ease-in;
 }
 /*-- banner --*/
-.banner{
+/*.banner{
 	background:url(../images/banner.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
@@ -41,6 +43,11 @@ input[type="submit"],input[type="reset"],a{
 	-o-background-size:cover;
 	-ms-background-size:cover;
 	min-height:770px;
+}*/
+.container{
+
+  /*padding: 80px 0;*/
+  width: 80%;
 }
 .w3_agile_header{
 	padding:2em 0 0;
@@ -144,7 +151,7 @@ input[type="submit"],input[type="reset"],a{
 }
 
 #sideNav a {
-	padding: 20px 30px;
+	padding: 19px 30px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight:600;
 	color:#fff;
@@ -193,7 +200,8 @@ input[type="submit"],input[type="reset"],a{
 #sideNav.showFullMenu {
 	right: 0;
 	width: 250px;
-	z-index: 9999;
+	z-index: 1;
+  margin-right: 5px;
 }
 
 #sideNav.showFullMenu ul ul li { height: 59px; }
@@ -1304,7 +1312,6 @@ button.close {
 .w3_agile_mail_grid input[type="submit"] {
     outline: none;
     width: 100%;
-    display: block;
     background: #1b7396;
     color: #fff;
     padding: 1em 0;

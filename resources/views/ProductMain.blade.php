@@ -5,6 +5,10 @@
 <!--<title>Piccolo Theme</title>-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
+    
+<link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
+
 <!-- CSS
 ================================================== -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -76,18 +80,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#"><img src="{!! asset('/assets/images/home.png')!!}" class="im"> <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="{{ Route('index')}}"><img src="{!! asset('/assets/images/home.png')!!}" class="im"> <span class="sr-only">(current)</span></a></li>
         <!-- <li><a href="#"><img class="im" src="{!! asset('/assets/images/search.png')!!}" class="srch" ></a></li> -->
         
       </ul>
 
     
-
-      <form class="navbar-form navbar-left">
+    <form class="navbar-form navbar-left" method="POST" action="{{ Route('search')}}">
+                 {{ csrf_field() }}
         <div class="form-group" id="cont">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search" name="search">
         </div>
-        <button type="submit" class="btn btn-default" onclick="srch('cont')"><img src="{!! asset('/assets/images/search.png')!!}" class="srch" ></button>
+        <button type="submit" class="btn btn-default"><img src="{!! asset('/assets/images/search.png')!!}" class="srch" ></button>
       </form>
 
         <img src="{!! asset('/assets/images/logo.png')!!}" alt="Brand" class="navbar-brand im logo" id="lo">
@@ -133,7 +137,7 @@
             </div>
          </div>
 
-@include('jsProductMain');
+@include('jsProductMain')
             
                     
        <!-- <div class="panel-body" >

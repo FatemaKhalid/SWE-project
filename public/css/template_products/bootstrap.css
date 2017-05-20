@@ -224,7 +224,7 @@ a:hover {
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 940px;
+ 
 }
 
 .span12 {
@@ -703,11 +703,11 @@ h4 small {
   border-bottom: 1px solid #eeeeee;
 }
 
-ul,
+/*ul,
 ol {
   padding: 0;
   margin: 0 0 10px 25px;
-}
+}*/
 
 ul ul,
 ul ol,
@@ -3722,7 +3722,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .nav {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   margin-left: 0;
   list-style: none;
 }

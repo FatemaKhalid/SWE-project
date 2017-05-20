@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="{!! asset('css/index.css') !!}">
+	<title>jQuery AppLikeOnePage.js Plugin Demo</title>
+    <link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
 
+	<link rel="stylesheet" type="text/css" href="{!! asset('css/index.css') !!}">
 
 	<style>
 * {
@@ -16,7 +17,7 @@
 
 /* 
 			set overflow-y property to prevent scroll bar mess up the whole layout
-		*/  
+		*/
 
 body {
   margin: 0;
@@ -150,7 +151,6 @@ height:100vh;
 
 
 .fourth { 
-  background-color: #85C3B6;
 }
 
 .fifth { background-color: #aae; }
@@ -193,12 +193,14 @@ $('#container').load("{{ Route('yarab')}}");
 
 <script>
 function advices(){
-	    
-             //  window.location.replace("page2.php?name="+a.id);
-             //htt3`yer hnro7 lsaf7a advices
-			   window.open("{{ URL::route('articles', array('count_name' => 'advices')) }}","_parent");
+      
+         window.open("{{ URL::route('advicesMain')}}","_parent");
+         
+            }
+    function productMain(){
+            
+			   window.open("{{ Route('ProductMain')}}","_parent");
 			   
-			    //window.location.href="page2.php?name="+a.id;
             }
 </script>
 	<div id="container">
@@ -212,13 +214,14 @@ function advices(){
     <div class="op-section third">
 	
 	<img id="myImg" src="http://68.media.tumblr.com/3a9f5ee86b84e38a8659c9010c2aeb02/tumblr_n47ahupEuE1rk6ocoo1_500.gif" height="300px"
-	width="550px" onclick="advices()">
+	width="550px" onclick="productMain()">
 	
 	
 </div>
     <div class="op-section fourth">
    
       <img class="box1" src="{!! asset('/assets/images/art1.jpg')!!}" >
+ 
     
     <div class="box2">
       <!-- ################################################################################################ -->

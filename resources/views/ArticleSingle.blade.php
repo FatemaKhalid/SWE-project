@@ -1,59 +1,47 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
 <head>
-<meta charset="utf-8">
 
 	<title></title>
+    <link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
+
 	<link rel="stylesheet" type="text/css" href="{!! asset('css/singlearticle.css') !!}">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	
 </head>
-<body>
+<body >
 
-
-<div class="float_the_like">
-<button>
-<img src="{!! asset('/assets/images/heart_black.png')!!}">
-	
-</button>	
-
-
-</div>
-
-
+@include('nav')
 
 <div class="center">
-<p dir="rtl" class="title" id="title_text">
+<b id="title_text" dir="rtl" class="title" >
 .
-</p>
-
-
-	<div  class="adj_image">
-	<img src="{!! asset('/assets/images/apples.jpg')!!}" title="اننننن ااا ييس" alt="للل للل لت ليي">
-	</div>
+</b>
 
 <div class="clear"></div>
-<p dir="rtl" class="article" id="body_text">
+	<div  class="adj_image">
+	<img src="about:blank" id="article_img">
+	</div>
+
+
+<div class="clear"></div>
+
+
+<img id="image_hover" src="{!! asset('/assets/images/heart_black.png')!!}" onmouseover="onHover();" 
+      onmouseout="offHover();" onclick="clickfn()" class="float_heart">
+
+<p id="likes_text" class="float_right">
+	.
+</p>
+
+<div class="clear"></div>
+<div dir="rtl" class="article" id="body_text">
 .
-<p>
 </div>
-<script >
-	window.onload = function(){
+</div>
 
-var article = {!! json_encode($article->toArray()) !!};
-    
-
-    
-    	var body1 = document.getElementById("body_text");
-
-    	var title1 = document.getElementById("title_text");
-
-		
-        title1.innerHTML=article[0].title;
-    	body1.innerHTML = article[0].body;
-
-   
-	}
-</script>
-
+@include('jsarticlesingle')
 </body>
 </html>

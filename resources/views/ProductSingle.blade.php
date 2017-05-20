@@ -24,7 +24,7 @@
 
 <!-- Favicons
 ================================================== -->
-<link rel="shortcut icon" href="{!! asset('/assets/images/template_products/favicon.ico') !!}">
+<link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
 <link rel="apple-touch-icon" href="{!! asset('/assets/images/template_products/apple-touch-icon.png') !!}">
 <link rel="apple-touch-icon" sizes="72x72" href="{!! asset('/assets/images/template_products/apple-touch-icon-72x72.png') !!}">
 <link rel="apple-touch-icon" sizes="114x114" href="{!! asset('/assets/images/template_products/apple-touch-icon-114x114.png') !!}">
@@ -108,26 +108,26 @@ input[type="text"],input[type="number"], input[type="email"]{
                  <div class="form-group" align=right>
 	
       <label for="name">: الاسم</label>
-      <input type="text" class="form-control" name="name" >
+      <input type="text" class="form-control" name="name" required >
     </div>
 	
 
     <div class="form-group" align=right>
 	
       <label for="email">: البريد الالكترونى</label>
-      <input type="email" class="form-control" name="email" >
+      <input type="email" class="form-control" name="email" required>
     </div>
     <div class="form-group" align=right>
       <label for="tel" >: رقم التليفون</label>
-      <input type="text" class="form-control" name="tel" >
+      <input type="text" class="form-control" name="tel" required >
     </div>
     <div class="form-group" align=right>
       <label for="address">: العنوان</label>
-      <input type="text" class="form-control" name="address" >
+      <input type="text" class="form-control" name="address" required>
     </div>
 	    <div class="form-group" align=right>
       <label for="quantity">: الكمبة المطلوبة من المنتج</label>
-	  <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="5">
+	  <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="5" required>
       
     </div>
 	
@@ -179,18 +179,19 @@ input[type="text"],input[type="number"], input[type="email"]{
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#"><img src="{!! asset('/assets/images/home.png')!!}" class="im"> <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="{{ Route('index')}}"><img src="{!! asset('/assets/images/home.png')!!}" class="im"> <span class="sr-only">(current)</span></a></li>
         <!-- <li><a href="#"><img class="im" src="{!! asset('/assets/images/search.png')!!}" class="srch" ></a></li> -->
         
       </ul>
 
     
 
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" method="POST" action="{{ Route('search')}}">
+                 {{ csrf_field() }}
         <div class="form-group" id="cont">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search" name="search">
         </div>
-        <button type="submit" class="btn btn-default" onclick="srch('cont')"><img src="{!! asset('/assets/images/search.png')!!}" class="srch" ></button>
+        <button type="submit" class="btn btn-default"><img src="{!! asset('/assets/images/search.png')!!}" class="srch" ></button>
       </form>
 
         <img src="{!! asset('/assets/images/logo.png')!!}" alt="Brand" class="navbar-brand im logo" id="lo">
@@ -293,13 +294,5 @@ input[type="text"],input[type="number"], input[type="email"]{
 }
 </script>
 
-
-<script>
-function submit_order()
-{
-  //ocument.getElementById("searchTxt").value
-}
-
-</script>
 
 </html>

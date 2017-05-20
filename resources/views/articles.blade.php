@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <!-- <link rel="stylesheet" href="http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css" /> -->
         <link href="{!! asset('css/layout.css') !!}" rel="stylesheet" type="text/css" media="all">
+        <link rel="icon" href="{!! asset('/assets/images/template_products/logo.png') !!}">
+
 </head>
 <body>
 
@@ -17,26 +19,9 @@
   
     <ul class="nospace group" id="articles">
       
-<li>
-        <figure class="txtoverlay"><a href="#"><img src="{!! asset('/assets/images/art1.jpg')!!}" alt=""></a>
-          <figcaption class="txtcaption">
-            <h6 class="heading">Vehicula</h6>
-            <p>Urna convallis vitae pellentesque odio faucibus sed porta molestie est.</p>
-            <footer><a href="#">View Details &raquo;</a></footer>
-          </figcaption>
-        </figure>
-      </li>
-<li>
-        <figure class="txtoverlay"><a href="#"><img src="{!! asset('/assets/images/art1.jpg')!!}" alt=""></a>
-          <figcaption class="txtcaption">
-            <h6 class="heading">Vehicula</h6>
-            <p>Urna convallis vitae pellentesque odio faucibus sed porta molestie est.</p>
-            <footer><a href="#">View Details &raquo;</a></footer>
-          </figcaption>
-        </figure>
-      </li>
 
-@include('jsArticleMain');
+
+@include('jsArticleMain')
     </ul>
     <!-- ################################################################################################ -->
   </section>

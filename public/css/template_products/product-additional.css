@@ -5,3 +5,10 @@
     width: 25%;
     height: auto;
 }
+.panel-body {
+    padding: 0;
+}
+.products-panel {
+    width: 100%;
+    margin: 0;
+}

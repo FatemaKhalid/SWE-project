@@ -13,7 +13,7 @@ for(var i=0;i<articles.length;i++)
       var ul = document.getElementById("arts");
   var li = document.createElement("li");
 
- li.className="one_third";
+ li.className="one_third yoo";
 
       var article =  document.createElement("article");
        var s1="../../storage/";
@@ -29,7 +29,7 @@ for(var i=0;i<articles.length;i++)
 
        
         var p = document.createElement("p");
-        p.innerHTML= String(articles[i].body).substring(0,54)+"...";
+        p.innerHTML= String(articles[i].body).substring(0,80)+"...";
 
 
         var footer =  document.createElement("footer"); 
@@ -52,7 +52,9 @@ for(var i=0;i<articles.length;i++)
           this.innerHTML="Select &raquo;";
                 IDstodelete.splice(c, 1);
           }
-           console.log(IDstodelete);      
+           console.log(IDstodelete);   
+
+           document.getElementById("article_ids").value=IDstodelete;   
             });
               
               

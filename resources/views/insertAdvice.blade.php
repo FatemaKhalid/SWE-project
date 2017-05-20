@@ -32,14 +32,14 @@
 }, 500);
     </script>
 		<body style="background-color: #E3EEDE">
+
 @extends('layouts.app')
 
 @section('content')
 
-
-		 <form method="POST" action="{{ Route('save.article')}}" enctype="multipart/form-data" class="container">
+		 <form method="POST" action="{{ Route('save.advice')}}" enctype="multipart/form-data" class="container">
 				 {{ csrf_field() }}
-<h1>article upload</h1>
+<h1>Advice upload</h1>
 				<div class="row text-right" style="margin: 30px;">
 				 <div class="col-xs-10 col-xs-offset-1">
 
@@ -64,34 +64,7 @@
 				 </div>
 				</div>
 					
-				 <div class="row text-left" style="margin: 30px;">
-				 <div class="col-xs-10 col-xs-offset-1">
-				 <p style="float: right; margin-left: 20px">: الدولة</p>
-							<select name="countries" style="float: right">
-								<optgroup label="اختر الدولة">
-
-													@foreach($countries as $key => $country)
-														
-													<option value="{{ $country->id }}">{{ $country->name }}</option>
-													@endforeach
-
-								
-								</optgroup>
-							</select>
-<div style="clear: both; margin-top: 20px;"></div>
-							<p style=" float: right; margin-left: 20px">: نوع المقالة</p>
-
-							<select name="type" value="1"  style="float: right">
-								<optgroup label="اختر نوع المقالة">
-
-										<option value="1" >ترفيهيه</option>
-											<option value="2">اجراءات</option>
-												<option value="3">خبرات</option>
-						 
-								</optgroup>
-					 </select>
-				 </div>
-				</div>
+				 
 				 
 
 				 <div class="row text-center" >
@@ -108,3 +81,5 @@
 		</body>
 
 </html>
+
+

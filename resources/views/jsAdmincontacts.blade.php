@@ -25,17 +25,24 @@ for(var i=0;i<contacts.length;i++)
            
            if(x)
            {
-          this.setAttribute("style", "background-color:#a8d7c2;");
           x=false;
 
           id=this.id;
+          // var contacts_all=document.getElementsByClassName("agileinfo_header w3layouts_header");
+          // for(var i = 0; i < contacts_all.length; i++)
+          // {
+          //  contacts_all.item(i).style.backgroundColor="transperant";
+          // }
+          this.setAttribute("style", "background-color:#a8d7c2;");
            document.getElementById("cont_id").value=id;
            } else {
+
+            document.getElementById(id).setAttribute("style", "background-color:transperant;");
             id=-5;    //constrain to handle b2a
            document.getElementById("cont_id").value=id;
             x=true;
 
-          this.setAttribute("style", "background-color:transperant;");
+          
            }
            console.log(document.getElementById("cont_id").value); 
             });
