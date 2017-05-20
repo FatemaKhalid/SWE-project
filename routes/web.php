@@ -21,11 +21,22 @@ Route::get('/yarab', function () {
     return view('yarab');
 })->name('yarab');
 
+/*Route::get('/articles', function () {
+    return view('articles');
+})->name('articles');*/
 
 Route::get('/articles/{count_id}/{type}',[
     'as' => 'articles',
     'uses' =>'ArticleController@articles'
 ]);
+
+/*Route::get('/africa', function () {
+    return view('africa');
+})->name('africa');*/
+
+//Route::get('africa','homeController@africa')->name('africa');
+
+//Route::get('/africa/{loc_id}', ['uses' =>'homeController@africa']);
 
 
 Route::get('/africa/{loc_id}',[
@@ -118,7 +129,7 @@ Route::get('/addProduct','ProductController@add')->name('addProduct');
 Route::post('/saveProduct','ProductController@Save')->name('saveProduct');
 Auth::routes();
 
-Route::get('/home', 'homeController@index');
+Route::get('/home', 'HomeController@index');
 
 
 Route::get('/changepass', 'AdminController@showResetForm')->name('change.pass.form');
@@ -159,21 +170,39 @@ Route::get('/admin_menu', function () {
 });
 
 
-//fatema############################Articles of admin########################
+//fatema
 Route::get('/Admincountry','ArticleController@countriesTodelete')->name('countriesTodelete');
+
+//Route::match(['get', 'post'],'/Adminarticles','ArticleController@showTodelete')->name('showTodelete');
 
 Route::post('/Admincountry','ArticleController@showTodelete')->name('showTodelete');
 
+Route::post('/add_contact',"AdminController@Addcont")->name('add_contact');
+Route::post('/delete_contact',"AdminController@Delcont")->name('delete_contact');
 Route::post('/delArts',"ArticleController@delArts")->name('delArts');
+
+Route::get('/Admincontacts','AdminController@contacts')->name('contacts');
 
 Route::post('/searchArdticlesAdmin','ArticleController@search_articles_admin')->name('searchArdticlesAdmin');
 
-//fatema############################Contacts of admin########################
-Route::post('/add_contact',"AdminController@Addcont")->name('add_contact');
-Route::post('/delete_contact',"AdminController@Delcont")->name('delete_contact');
-Route::get('/Admincontacts','AdminController@contacts')->name('contacts');
+Route::get('/Adminadvices','AdviceController@get_advices_admin')->name('Adminadvices');
+Route::post('/AdminadvicesSearch','AdviceController@search_advices_admin')->name('AdminadvicesSearch');
+
+// Route::get('/dropdowCountries',function(){
+//       return view('admin.dropdown-countries');
+// });
+
+
+Route::get('/dropdowCountries','CountryController@getcontinents')->name('dropdowCountries');
+
+
+
+Route::post('/add_country','CountryController@add_country')->name('add_country');
+
+
 //fatema############################Advics of admin########################
 Route::get('/Adminadvices','AdviceController@get_advices_admin')->name('Adminadvices');
 Route::post('/AdminadvicesSearch','AdviceController@search_advices_admin')->name('AdminadvicesSearch');
 Route::get('/AdminAdvices','AdviceController@advicesToDelete')->name('advicesToDelete');
 Route::post('/AdminAdvices',"AdviceController@delAdvs")->name('delAdvs');
+

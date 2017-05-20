@@ -14,4 +14,17 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         //
     ];
+
+   /* private $openRoutes = ['/check_back'];
+
+    public function handle($request, Closure $next)
+    {
+        foreach($this->openRoutes as $route) {
+
+            if ($request->is($route)) {
+                return $next($request);
+            }
+        }
+        return parent::handle($request, $next);
+    }*/
 }

@@ -15,44 +15,6 @@ class AdviceController extends Controller
 
       return view('advicesMain',compact('advices'));
     }
-     public function advicesToDelete()
-    {
-       if(Auth::check())
-               {
-      $advices=Advice::get(['title','body','pic','id',]);
-
-      return view('AdminAdvices',compact('advices'));
-
-
-   }
-       else {
-                       return redirect('/home');
-
-       }
-    }
-    public function delAdvs(Request $request)
-    { 
-      if(Auth::check())
-               {
-    
-        $orgIds = $request->get('advices_ids');
-        $array = explode(',', $orgIds);
-
-//return $array;
-       Advice::destroy( $array);
-
-       $advices= Advice::get(['title','body','pic','id',]);
-
-
-     return view('AdminAdvices',compact('advices'));
-//return redirect(Request::url("/Admincountry"));
-       
-   }
-       else {
-                       return redirect('/home');
-
-       }
-    }
 
     public function get_single_article($article_id)
     {
@@ -168,5 +130,30 @@ $q=$request->get('search');
     $advices = Advice::where('title','LIKE','%'.$q.'%')->get();
         return view('AdminAdvices',compact('advices'));
 }
+
+ public function delAdvs(Request $request)
+    { 
+      if(Auth::check())
+               {
+    
+        $orgIds = $request->get('advices_ids');
+        $array = explode(',', $orgIds);
+
+//return $array;
+       Advice::destroy( $array);
+
+       $advices= Advice::get(['title','body','pic','id',]);
+
+
+     return view('AdminAdvices',compact('advices'));
+//return redirect(Request::url("/Admincountry"));
+       
+   }
+       else {
+                       return redirect('/home');
+
+       }
+    }
+
 
 }

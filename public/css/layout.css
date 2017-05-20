@@ -13,7 +13,7 @@ body{
     width: 48%;
     border-radius: 3px;
     overflow: hidden;
-    background: #fafafa url("../assets/images/icon-select.png") no-repeat 100% 50%;
+    background: #fafafa  100% 50%;
     background-size: contain;
     float: left;
     margin: 15px 8px;
@@ -21,7 +21,7 @@ body{
 
 .select-style select{
     padding: 5px 8px;
-    width: 101%;
+    width: 99%;
     border: none;
     box-shadow: none;
     background: transparent;
@@ -41,12 +41,12 @@ font-size: 18px;
 
 /* Latest
 ---------------------------------------------------------------------------------------------------------------*/
-#latest{display:block; margin:0 auto; padding:0; box-shadow: 0 0;}
+#latest{display:block; margin:0 auto; padding:15px; box-shadow: 0 0;}
 
 #latest ul{
 }
 
- #latest ul li:last-child{clear:left; }
+
 #latest ul li img{display:block; width:100%;}
 #latest ul li .txtoverlay{display:block; text-align:center; margin: auto;}
 #latest ul li .txtoverlay .txtcaption *{margin:0; padding:0;}

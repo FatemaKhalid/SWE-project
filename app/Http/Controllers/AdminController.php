@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Log;
 use App\Acontact;
+
 class AdminController extends Controller
 {
     public function showResetForm(Request $request, $token = null)

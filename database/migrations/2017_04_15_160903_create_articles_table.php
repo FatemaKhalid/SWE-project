@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->unique();
-             $table->binary('pic');
+             $table->text('pic');
              $table->mediumText('body');
              $table->integer('country_id');
              $table->integer('no_of_likes');

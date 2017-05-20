@@ -5,7 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
+use Illuminate\Session\TokenMismatchException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class Handler extends ExceptionHandler
 {
     /**
@@ -32,7 +33,9 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        
         parent::report($exception);
+        
     }
 
     /**
@@ -44,7 +47,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if($exception instanceof TokenMismatchException) {
+            return redirect('/login');
+        } else if($exception instanceof  NotFoundHttpException) {
+            return response('Resource not found', 404);
+        } else {
+            return parent::render($request, $exception);
+        }
+      
+
+
     }
 
     /**

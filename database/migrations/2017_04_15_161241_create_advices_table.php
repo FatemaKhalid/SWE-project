@@ -16,7 +16,7 @@ class CreateAdvicesTable extends Migration
         Schema::create('advices', function (Blueprint $table) {
             $table->increments('id');
              $table->string('title')->unique();
-             $table->binary('pic');
+             $table->text('pic');
              $table->mediumText('body');
              $table->integer('no_of_likes');
             $table->timestamps();
